@@ -1,2 +1,12 @@
 <h1>{{id}}</h1>
 <h3>{{startingBid}}, {{description}}</h3>
+
+<ul>
+  {{#each item in items}}
+  <li>{{#link-to 'item' item.id}}{{item.description}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{outlet "new-item"}}
+
+{{#link-to 'new-item' classNames="btn btn-primary"}} Add item {{/link-to}}

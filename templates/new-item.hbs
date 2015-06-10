@@ -1,0 +1,26 @@
+<h1>New Item</h1>
+
+<form>
+  <div class="form-group">
+    <label for="description">Item description</label>
+    {{input value=description id="description" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label for="owner">Owner</label>
+    {{input value=owner id="owner" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label for="backstory">backstory</label>
+    {{input value=backStory id="backstory" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label for="year-acquired">Year acquired</label>
+    {{input value=yearAcquired id="year-acquired" class="form-control"}}
+  </div>
+
+  <button class="btn btn-success" {{action 'save'}}>Save</button>
+
+</form>
