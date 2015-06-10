@@ -1,1 +1,10 @@
 <h1>{{name}}</h1>
+<h3>{{date}}, {{description}}</h3>
+
+<ul>
+  {{#each}}
+  <li>{{#link-to 'lot' id}}{{id}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'new-lot' classNames="btn btn-primary"}} New Lot {{/link-to}}
