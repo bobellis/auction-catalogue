@@ -5,8 +5,9 @@ Auction.NewItemController = Ember.Controller.extend({
       var newItem = this.store.createRecord('item', {
         owner: this.get('owner'),
         description: this.get('description'),
-        backStory: this.get('backstory'),
-        yearAcquired: this.get('year-acquired')
+        backstory: this.get('backstory'),
+        yearAcquired: this.get('year-acquired'),
+        image: this.get('image')
       });
       newItem.save();
 

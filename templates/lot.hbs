@@ -1,27 +1,42 @@
 <h1>Lot ID: {{id}}</h1>
-<h3>Starting Bid: {{startingBid}}, Description: {{description}}</h3>
+<h3><strong>Starting Bid:</strong> {{startingBid}}</h3>
+<h3><strong>Description:</strong> {{description}}</h3>
+<br>
+<div class="row">
+  <ul>
+    {{#each item in this.items itemController='item'}}
+      <div class="col-md-3">
+        <div class="thumbnail" style="background-image: url({{item.image}})">
 
-<ul>
-  {{#each item in this.items itemController='item'}}
-    <div class="item" {{action 'itemClicked'}}>
-      <p class="lead">
-        {{item.description}}
-      </p>
-      {{#if item.clicked}}
-        <p>
-          Owner: {{item.owner}}
-        </p>
-        <p>
-          Backstory: {{item.backstory}}
-        </p>
-        <p>
-          Year Acquired: {{item.yearAcquired}}
-        </p>
-      {{/if}}
-    </div>
-  {{/each}}
-</ul>
-
+          <div class="item" {{action 'itemClicked'}}>
+            <p class="lead">
+              {{item.description}}
+            </p>
+            {{#if item.clicked}}
+              <p>
+                Owner: {{item.owner}}
+              </p>
+              <p>
+                Backstory: {{item.backstory}}
+              </p>
+              <p>
+                Year Acquired: {{item.yearAcquired}}
+              </p>
+              <p>
+                <!-- Image: <img {{bind-attr src=item.image}}> -->
+              </p>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </ul>
+</div>
+<br>
 {{outlet "new-item"}}
 
-{{#link-to 'new-item' classNames="btn btn-primary"}} Add item {{/link-to}}
+<div class="row">
+  <div class="col-md-12">
+    {{#link-to 'new-item' classNames="btn btn-primary"}} Add item {{/link-to}}
+  </div>
+</div>

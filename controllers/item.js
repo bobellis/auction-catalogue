@@ -8,5 +8,5 @@ Auction.ItemController = Ember.ObjectController.extend({
         this.set('clicked', true);
       }
     }
-  }
+  },
 });

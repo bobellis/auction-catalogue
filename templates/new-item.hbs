@@ -13,13 +13,19 @@
 
   <div class="form-group">
     <label for="backstory">backstory</label>
-    {{input value=backStory id="backstory" class="form-control"}}
+    {{input value=backstory id="backstory" class="form-control"}}
   </div>
 
   <div class="form-group">
     <label for="year-acquired">Year acquired</label>
-    {{input value=yearAcquired id="year-acquired" class="form-control"}}
+    {{input value=year-acquired id="year-acquired" class="form-control"}}
   </div>
+
+  <div class="form-group">
+    <label for="image">Image URL</label>
+    {{input value=image id="image" class="form-control"}}
+  </div>
+
 
   <button class="btn btn-success" {{action 'save'}}>Save</button>
 
