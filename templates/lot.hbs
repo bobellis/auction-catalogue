@@ -1,9 +1,24 @@
-<h1>{{id}}</h1>
-<h3>{{startingBid}}, {{description}}</h3>
+<h1>Lot ID: {{id}}</h1>
+<h3>Starting Bid: {{startingBid}}, Description: {{description}}</h3>
 
 <ul>
-  {{#each item in items}}
-  <li>{{#link-to 'item' item.id}}{{item.description}}{{/link-to}}</li>
+  {{#each item in this.items itemController='item'}}
+    <div class="item" {{action 'itemClicked'}}>
+      <p class="lead">
+        {{item.description}}
+      </p>
+      {{#if item.clicked}}
+        <p>
+          Owner: {{item.owner}}
+        </p>
+        <p>
+          Backstory: {{item.backstory}}
+        </p>
+        <p>
+          Year Acquired: {{item.yearAcquired}}
+        </p>
+      {{/if}}
+    </div>
   {{/each}}
 </ul>
 

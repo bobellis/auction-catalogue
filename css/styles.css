@@ -1,6 +1,10 @@
-#jqtest {
-  background-color: black;
-  color: white;
+.item {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-top: 8px;
+  background-color: rgba( 180, 181, 247, 0.7);
 }
 
 .vertical-center {
