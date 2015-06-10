@@ -2,7 +2,7 @@ Auction.NewLotController = Ember.Controller.extend({
   needs: ['auction'],
   actions: {
     save: function () {
-      var newLot = this.store.createRecord({
+      var newLot = this.store.createRecord('lot', {
         description: this.get('description'),
         startingBid: this.get('starting-bid')
       });

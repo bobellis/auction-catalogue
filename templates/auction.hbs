@@ -2,8 +2,8 @@
 <h3>{{date}}, {{description}}</h3>
 
 <ul>
-  {{#each}}
-  <li>{{#link-to 'lot' id}}{{id}}{{/link-to}}</li>
+  {{#each lot in lots}}
+  <li>{{#link-to 'lot' lot.id}}{{lot.id}}{{/link-to}}</li>
   {{/each}}
 </ul>
 
