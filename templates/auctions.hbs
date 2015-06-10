@@ -1,1 +1,9 @@
-Stuff goes here.
+<h1> Our current auction listings </h1>
+
+<ul>
+  {{#each}}
+    <li>{{#link-to 'auction' auction}}{{name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{#link-to 'new-auction' classNames="btn btn-primary"}} New Auction {{/link-to}}
