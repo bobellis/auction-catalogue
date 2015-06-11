@@ -1,4 +1,4 @@
-## APP NAME
+## Auction Catalogue
 
 <a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
 
