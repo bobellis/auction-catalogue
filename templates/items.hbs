@@ -1,0 +1,27 @@
+<div class="row" {{action 'clearAllDescrip'}}>
+  {{#each item in model itemController='item'}}
+    <div class="col-md-3">
+      <div class="thumbnail" style="background-image: url({{item.image}})">
+        <div class="item" {{action 'itemClicked'}}>
+          <p class="lead">
+            {{item.description}}
+          </p>
+          {{#if item.clicked}}
+            <p>
+              Owner: {{item.owner}}
+            </p>
+            <p>
+              Backstory: {{item.backstory}}
+            </p>
+            <p>
+              Year Acquired: {{item.yearAcquired}}
+            </p>
+            <p>
+              <!-- Image: <img {{bind-attr src=item.image}}> -->
+            </p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

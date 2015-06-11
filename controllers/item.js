@@ -1,10 +1,11 @@
 Auction.ItemController = Ember.ObjectController.extend({
-  needs: ["lot", 'item'],
+  needs: ["lot"],
   clicked: false,
+  foo: "foo",
   actions: {
     itemClicked: function () {
-      this.setEach('clicked', false);
-      // var lot = this.get('controllers.lot');
+      // this.setEach('clicked', false);
+      var lot = this.get('controllers.lot.model');
       // lot.get('model').get('items').forEach(function(item) {
       //   item.set('clicked', false);
       // });
@@ -14,11 +15,11 @@ Auction.ItemController = Ember.ObjectController.extend({
       if (this.clicked) {
         this.set('clicked', false);
         lot.set("image", "")
-        lot.set("lastItem", this.id)
+        // lot.set("lastItem", this.id)
       } else {
         this.set('clicked', true);
         lot.set("image", this.get("image"))
-        lot.set("currentItem", this.id)
+        // lot.set("currentItem", this.id)
       }
     }
   },

@@ -8,35 +8,18 @@
     <img class="img-responsive img-rounded" id="display-item" {{bind-attr src=this.image}}>
   </div>
 </div>
-<div class="row">
 
-  {{#each item in this.items itemController='item'}}
-    <div class="col-md-3">
-      <div class="thumbnail" style="background-image: url({{item.image}})">
-        <div class="item" {{action 'itemClicked'}}>
-          <p class="lead">
-            {{item.description}}
-          </p>
-          {{#if item.clicked}}
-            <p>
-              Owner: {{item.owner}}
-            </p>
-            <p>
-              Backstory: {{item.backstory}}
-            </p>
-            <p>
-              Year Acquired: {{item.yearAcquired}}
-            </p>
-            <p>
-              <!-- Image: <img {{bind-attr src=item.image}}> -->
-            </p>
-          {{/if}}
-        </div>
+  <div class="row">
+    {{#if this.notViewingItems}}
+      <div class="col-md-8" {{action 'viewItems'}}>
+        {{#link-to 'items' id classNames="btn btn-primary"}}Click Here To View Items{{/link-to}}
       </div>
-    </div>
-  {{/each}}
+    {{/if}}
+  </div>
 
-</div>
+
+{{outlet "items"}}
+
 <br>
 {{outlet "new-item"}}
 
@@ -47,3 +30,6 @@
     </div>
   </div>
 {{/if}}
+
+<!-- this.items | itemController='item' -->
+<!-- item in Auction.ItemsController -->
