@@ -20,6 +20,16 @@ a:hover {
   padding-bottom: 30px;
 }
 
+.col-md-3 {
+    align-items: center;
+}
+
+.col-md-6 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
 .item {
   border: 1px solid black;
   border-radius: 5px;
@@ -28,12 +38,15 @@ a:hover {
   padding: 10px;
   /*padding-top: 8px;*/
   background-color: rgba( 255, 237, 229, 0.8);
+
 }
 
 .thumbnail {
   border-radius: 5px;
   margin-bottom: 20px;
   background-size: 100%;
+  box-shadow: 10px 10px 10px rgba( 85, 15, 7, 0.5);
+
 }
 
 .vertical-center {
@@ -46,4 +59,14 @@ a:hover {
 
 .lot-id{
   font-size: 18px;
+}
+
+#display-item {
+  width: 50%;
+  margin-left: 25%;
+  box-shadow: 10px 10px 10px rgba( 85, 15, 7, 0.5);
+}
+
+#lot-header{
+  margin-bottom: 8%;
 }

@@ -1,40 +1,41 @@
 <div class="row">
-  <h1>Lot ID: {{id}}</h1>
-  <h3><strong>Starting Bid: </strong> ${{startingBid}}.00</h3>
-  <h3><strong>Description:</strong> {{description}}</h3>
-  <img{{bind-attr src=this.image}}>
-  <br>
-
+  <div class="col-md-6" id="lot-header">
+    <h1>Lot ID: {{id}}</h1>
+    <h3><strong>Starting Bid: </strong> ${{startingBid}}.00</h3>
+    <h3><strong>Description:</strong> {{description}}</h3>
+  </div>
+  <div class="col-md-6">
+    <img class="img-responsive img-rounded" id="display-item" {{bind-attr src=this.image}}>
+  </div>
 </div>
 <div class="row">
-  <ul>
-    {{#each item in this.items itemController='item'}}
-      <div class="col-md-3">
-        <div class="thumbnail" style="background-image: url({{item.image}})">
 
-          <div class="item" {{action 'itemClicked'}}>
-            <p class="lead">
-              {{item.description}}
+  {{#each item in this.items itemController='item'}}
+    <div class="col-md-3">
+      <div class="thumbnail" style="background-image: url({{item.image}})">
+        <div class="item" {{action 'itemClicked'}}>
+          <p class="lead">
+            {{item.description}}
+          </p>
+          {{#if item.clicked}}
+            <p>
+              Owner: {{item.owner}}
             </p>
-            {{#if item.clicked}}
-              <p>
-                Owner: {{item.owner}}
-              </p>
-              <p>
-                Backstory: {{item.backstory}}
-              </p>
-              <p>
-                Year Acquired: {{item.yearAcquired}}
-              </p>
-              <p>
-                <!-- Image: <img {{bind-attr src=item.image}}> -->
-              </p>
-            {{/if}}
-          </div>
+            <p>
+              Backstory: {{item.backstory}}
+            </p>
+            <p>
+              Year Acquired: {{item.yearAcquired}}
+            </p>
+            <p>
+              <!-- Image: <img {{bind-attr src=item.image}}> -->
+            </p>
+          {{/if}}
         </div>
       </div>
-    {{/each}}
-  </ul>
+    </div>
+  {{/each}}
+
 </div>
 <br>
 {{outlet "new-item"}}
