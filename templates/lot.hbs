@@ -1,7 +1,11 @@
-<h1>Lot ID: {{id}}</h1>
-<h3><strong>Starting Bid: </strong> ${{startingBid}}.00</h3>
-<h3><strong>Description:</strong> {{description}}</h3>
-<br>
+<div class="row">
+  <h1>Lot ID: {{id}}</h1>
+  <h3><strong>Starting Bid: </strong> ${{startingBid}}.00</h3>
+  <h3><strong>Description:</strong> {{description}}</h3>
+  <img{{bind-attr src=this.image}}>
+  <br>
+
+</div>
 <div class="row">
   <ul>
     {{#each item in this.items itemController='item'}}
@@ -35,7 +39,7 @@
 <br>
 {{outlet "new-item"}}
 
-{{#if notAddingItem}}
+{{#if this.notAddingItem}}
   <div class="row">
     <div class="col-md-8" {{action 'addItem'}}>
       {{#link-to 'new-item' classNames="btn btn-primary"}} Add item {{/link-to}}

@@ -13,6 +13,8 @@ Auction.NewItemController = Ember.Controller.extend({
 
       var lot = this.get('controllers.lot.model');
       lot.get('items').pushObject(newItem);
+      var lotController = this.get('controllers.lot');
+      lotController.set("notAddingItem", true);
       lot.save();
       this.transitionToRoute('lot', lot.id);
     }
