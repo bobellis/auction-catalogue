@@ -1,9 +1,11 @@
-<h1> Our current auction listings </h1>
+<div class="col-md-8">
+  <h1> Our current auction listings </h1>
 
-<ul>
-  {{#each}}
-    <li>{{#link-to 'auction' id}}{{name}}{{/link-to}}</li>
-  {{/each}}
-</ul>
+  <ul>
+    {{#each}}
+      <li>{{#link-to 'auction' id}}{{name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
 
-{{#link-to 'new-auction' classNames="btn btn-primary"}} New Auction {{/link-to}}
+  {{#link-to 'new-auction' classNames="btn btn-primary"}} New Auction {{/link-to}}
+</div>

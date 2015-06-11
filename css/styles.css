@@ -1,3 +1,25 @@
+body {
+  background: url("../img/background.jpg") fixed center;
+  /*background-size:  110%;*/
+}
+
+a {
+  font-weight: 500;
+  font-size: 24px;
+  color: #4D5F48;
+}
+
+a:hover {
+  color: #550F07;
+
+}
+
+.col-md-12 {
+  border-radius: 5px;
+  background-color: rgba( 255, 237, 229, 0.5);
+  padding-bottom: 30px;
+}
+
 .item {
   border: 1px solid black;
   border-radius: 5px;
@@ -5,7 +27,7 @@
 
   padding: 10px;
   /*padding-top: 8px;*/
-  background-color: rgba( 180, 181, 247, 0.7);
+  background-color: rgba( 180, 181, 247, 0.5);
 }
 
 .thumbnail {
@@ -19,4 +41,8 @@
 
   display: flex;
   align-items: center;
+}
+
+.lot-id{
+  font-size: 18px;
 }

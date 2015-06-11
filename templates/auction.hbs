@@ -1,9 +1,10 @@
 <h1>{{name}}</h1>
-<h3>{{date}}, {{description}}</h3>
+<h3>Auction Date: {{date}}</h3>
+<h4>{{description}}</h4>
 
 <ul>
   {{#each lot in lots}}
-  <li>{{#link-to 'lot' lot.id}}{{lot.id}}{{/link-to}}</li>
+  <li>{{#link-to 'lot' lot.id}}{{lot.description}}<p class="lot-id"> Lot id: {{lot.id}} </p>{{/link-to}}</li>
   {{/each}}
 </ul>
 

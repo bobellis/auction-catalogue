@@ -1,5 +1,5 @@
 <h1>Lot ID: {{id}}</h1>
-<h3><strong>Starting Bid:</strong> {{startingBid}}</h3>
+<h3><strong>Starting Bid: </strong> ${{startingBid}}.00</h3>
 <h3><strong>Description:</strong> {{description}}</h3>
 <br>
 <div class="row">
@@ -35,8 +35,10 @@
 <br>
 {{outlet "new-item"}}
 
-<div class="row">
-  <div class="col-md-12">
-    {{#link-to 'new-item' classNames="btn btn-primary"}} Add item {{/link-to}}
+{{#if notAddingItem}}
+  <div class="row">
+    <div class="col-md-8" {{action 'addItem'}}>
+      {{#link-to 'new-item' classNames="btn btn-primary"}} Add item {{/link-to}}
+    </div>
   </div>
-</div>
+{{/if}}
